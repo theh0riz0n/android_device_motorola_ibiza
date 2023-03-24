@@ -1,23 +1,35 @@
 #
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2023 The Android Open Source Project
+# Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from wayne-common
-$(call inherit-product, device/motorola/motorola-common/ibiza.mk)
+LOCAL_PATH := device/motorola/ibiza
+# A/B
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    device/motorola/ibiza/overlay
-
-# Init
+# Boot control HAL
 PRODUCT_PACKAGES += \
-    fstab.qcom
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service
 
-# Wifi
 PRODUCT_PACKAGES += \
-    IbizaWifiOverlay
+    bootctrl.holi
 
-# Inherit the proprietary files
-$(call inherit-product, vendor/motorola/ibiza/ibiza-vendor.mk)
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.holi \
+    libgptutils \
+    libz \
+    libcutils
+
+PRODUCT_PACKAGES += \
+    otapreopt_script \
+    cppreopts.sh \
+    update_engine \
+    update_verifier \
+    update_engine_sideload

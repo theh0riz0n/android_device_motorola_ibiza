@@ -1,2 +1,10 @@
-# android_device_motorola_ibiza
-Minimal device tree for Moto G50 5G (ibiza). Experimental.
+# Android device tree for motorola moto g(50) (ibiza)
+
+```
+#
+# Copyright (C) 2023 The Android Open Source Project
+# Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+```
