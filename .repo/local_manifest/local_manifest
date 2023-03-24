@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="osm0sis/twrp_abtemplate" path="bootable/recovery/installer" remote="github" revision="master"/>
+  <project name="android_device_motorola_ibiza" path="device/motorola/ibiza" remote="theh0riz0n" revision="experimental"/>
+</manifest>
