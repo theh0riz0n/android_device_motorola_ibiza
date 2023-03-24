@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_ibiza.mk
+    $(LOCAL_DIR)/twrp_ibiza.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_ibiza-user \
-    omni_ibiza-userdebug \
-    omni_ibiza-eng
+    twrp_ibiza-user \
+    twrp_ibiza-userdebug \
+    twrp_ibiza-eng
